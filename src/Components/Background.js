@@ -10,14 +10,8 @@ export default function Background(props) {
             setImage("https://www.dropbox.com/s/z8b0771iqssa3r5/Sunny.jpg?raw=1")
         }
     }, [])
-    const styles = {
-        backgroundImage: "url("+ image + ") no-repeat center center fixed",
-        backgroundSize: "cover",
-        width: "100%",
-        height: "100%",
-    }
     return (
-           <div className="background-container" style={styles}>
+           <div className="background-container">
            <img src={image} alt="background"/>
            </div> 
     )

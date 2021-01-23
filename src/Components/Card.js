@@ -7,19 +7,19 @@ export default function Card(props) {
     {
     name: "תל-אביב",
     wavesHeight: "2ft",
-    wind: "10",
+    wind: "10mph",
     windDirection: "מערב"
     },
     {
     name: "חיפה",
     wavesHeight: "1.6ft",
-    wind: "10",
+    wind: "10mph",
     windDirection: "מערב"
     },
     {
     name: "אשדוד",
     wavesHeight: "1.3ft",
-    wind: "10",
+    wind: "10mph",
     windDirection: "מערב"
     }
 
