@@ -8,7 +8,7 @@ import Temp from './Components/Temp';
 function App() {
 const [weather, setWeather] = useState({})
 useEffect(() => {
-   axios(`https://api.openweathermap.org/data/2.5/weather?q=Tel-Aviv&units=metric&lang=he&appid=60a3c2719fb9f06d4e2e283ad781f66e`)
+   axios(`https://api.openweathermap.org/data/2.5/weather?q=Tel-Aviv&units=metric&lang=he&appid=` + process.env.REACT_APP_API_KEY)
   .then(request => setWeather(request));
 },[])
 const redirectSeaweed = () => {

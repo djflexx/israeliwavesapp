@@ -26,10 +26,10 @@ export default function Card(props) {
     ]
     return (
         <div className="cards-cont">
-        {information.map(i => {
+        {information.map((i, index) => {
         return (
             <React.Fragment>
-            <div className="card">
+            <div className="card" key={index}>
               <div className="location">
                  <div className="location-style">
                     <h1>{i.name}</h1> 
