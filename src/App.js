@@ -27,7 +27,7 @@ const redirectSeaweed = () => {
               <Background temp={weather.data.main.temp}/>
               <Fade in={isOpen} timeout={9000}>
                <img src="https://www.dropbox.com/s/g01onhui9w0j46p/Logo.png?raw=1" alt="logo" id="logo"/>  
-              </Fade>  
+              g</Fade>  
              <Temp temp={weather.data.main.temp}/>
              <Card weather={weather.data}/> 
              <img src="https://im-1-uk.msw.ms/msw_powered_by.png" alt="seaweed" onClick={redirectSeaweed} className="seaweed-image"/>       
