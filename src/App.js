@@ -9,14 +9,24 @@ import { Fade, CircularProgress } from '@material-ui/core';
 function App() {
 const [weather, setWeather] = useState({})
 const [isOpen, setIsOpen] = useState(false)
+
 useEffect(() => {
    axios(`https://api.openweathermap.org/data/2.5/weather?q=Tel-Aviv&units=metric&lang=he&appid=` + process.env.REACT_APP_API_KEY)
   .then(request => setWeather(request));
   setIsOpen(true)
+  console.log(process.env.REACT_APP_WAVES_KEY)
   return (() => {
     setIsOpen(false)
   })
 },[])
+// useEffect(() => {
+//   axios('https://api.stormglass.io/v2/weather/point?lat=58.7984&lng=17.8081&params=waveHeight', 
+//   {
+//   headers:{
+//     'Authorization': process.env.REACT_APP_WAVES_KEY
+//   }
+//   }).then(res => console.log(res))
+// })
 const redirectSeaweed = () => {
   window.location.href = "http://magicseaweed.com";
 }
