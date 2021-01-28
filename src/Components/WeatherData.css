@@ -1,8 +1,15 @@
-.data-cont {
+.card-content {
+    padding: 15px 20px;
+}
+.beach {
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-direction: row-reverse;
     align-items: center;
+    padding: 0 4px;
 }
-.card-content {
-    padding: 20px 40px;
+.beach:hover {
+    cursor: pointer;
+    background-color: #aec3d3;
 }

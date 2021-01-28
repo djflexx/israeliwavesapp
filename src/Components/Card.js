@@ -1,45 +1,51 @@
-import React from 'react'
+import React, {useState} from 'react'
 import WeatherData from './WeatherData'
 import './Card.css'
+import {Locations} from '../Location'
 
-export default function Card(props) {
-    const information = [
-    {
-    name: "תל-אביב",
-    wavesHeight: "2ft",
-    wind: "10mph",
-    windDirection: "מערב"
-    },
-    {
-    name: "חיפה",
-    wavesHeight: "1.6ft",
-    wind: "10mph",
-    windDirection: "מערב"
-    },
-    {
-    name: "אשדוד",
-    wavesHeight: "1.3ft",
-    wind: "10mph",
-    windDirection: "מערב"
+export default function Card() {
+    const [clicked, isClicked] = useState(false)
+    const [clickedItem, isClickedItem] = useState('')
+    const handleClick = (event) => {
+    isClicked(true)
+    if(clickedItem !== event.target.innerText){
+      isClicked(true)
+    }else if (clickedItem === event.target.innerText && !clicked){
+      isClicked(true)
+    }
+    else {
+      isClicked(prevState => !prevState)
+    }
+    isClickedItem(event.target.innerText)
     }
 
-    ]
     return (
         <div className="cards-cont">
-        {information.map((i, index) => {
-        return (
             <React.Fragment>
-            <div className="card" key={index}>
-              <div className="location">
-                 <div className="location-style">
-                    <h1>{i.name}</h1> 
+            {Locations.map((a, index) => {
+                 return (
+            <div className={clicked && clickedItem === Locations[index].area ? "card": "card-closed"} key={index}>
+                 <div className="location" onClick={handleClick}>
+                   <div className="location-style">
+                     <h1>{a.area}</h1>
+                   </div>
                  </div>
-              </div>
-              <WeatherData height={i.wavesHeight} wind={i.wind} windDirection={i.windDirection}/>
+              {a.area === clickedItem && clicked ? (
+              <>
+              {a.beaches.map((beaches, index) => {            
+                  return (
+                    <div key={index}>
+                       <WeatherData name={beaches.name} lat={beaches.lat} lng={beaches.lng}/>
+                    </div>
+                  )
+              })}
+              </>
+              ): null
+              }
             </div>
+            )})
+            }
             </React.Fragment>
-          )})
-        }
         </div>
     )
 }
