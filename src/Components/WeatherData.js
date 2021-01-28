@@ -12,8 +12,9 @@ export default function WeatherData(props) {
    const date = new Date();
    const UTC = date.getHours();
    const [isClicked, setIsClicked] = useState(false)
+   const params = "waveHeight,swellPeriod,windSpeed,windDirection,waterTemperature,currentSpeed"
    useEffect(()=> {
-         axios(`https://api.stormglass.io/v2/weather/point?lat=${props.lat}&lng=${props.lng}&params=waveHeight`, 
+         axios(`https://api.stormglass.io/v2/weather/point?lat=${props.lat}&lng=${props.lng}&params=${params}`, 
          {
          headers:{
            'Authorization': process.env.REACT_APP_WAVES_KEY
@@ -37,7 +38,7 @@ export default function WeatherData(props) {
                  <>
                     <p>{waveHeight.hours[hour].waveHeight.meteo}.mt</p>
                  </> ) : <CircularProgress /> }
-               {isClicked && <MoreData lat={props.lat} lng={props.lng} hour={hour}/>}
+               {isClicked && <MoreData data={waveHeight} hour={hour}/>}
               </div>
            </div>
         </div>
