@@ -5,6 +5,7 @@ import Background from './Components/Background';
 import Card from './Components/Card';
 import Temp from './Components/Temp';
 import { Fade, CircularProgress } from '@material-ui/core';
+import Footer from './Components/Footer';
 
 function App() {
 const [weather, setWeather] = useState({})
@@ -21,6 +22,7 @@ useEffect(() => {
 },[])
 
   return (
+      <React.Fragment>
       <div className="App">
       {weather.data !== undefined ? (
              <>
@@ -36,6 +38,8 @@ useEffect(() => {
              ) : <CircularProgress size={"200px"}/>
       }
       </div>
+      <Footer />
+      </React.Fragment>
   )
 }
 

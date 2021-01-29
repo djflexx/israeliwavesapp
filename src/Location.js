@@ -49,6 +49,11 @@ export const Locations = [
     area: "ראשון לציון",
     beaches: [
         {
+        name: "פלמחים",
+        lat: 31.939897,
+        lng: 34.696435
+        },
+        {
         name: "הגולשים",
         lat: 32.003775,
         lng: 34.732610
@@ -59,5 +64,25 @@ export const Locations = [
         lng: 34.730508
         }
     ]
-    }
+    },
+    {
+        area: "אשדוד",
+        beaches: [
+            {
+            name: "הקשתות",
+            lat: 31.786293,
+            lng: 34.619170
+            }, 
+            ]
+    },
+    {
+        area: "שמורת חוף-השרון",
+        beaches: [
+            {
+            name: "געש",
+            lat: 32.218680,
+            lng: 34.619170
+            }, 
+            ]
+    },
 ]

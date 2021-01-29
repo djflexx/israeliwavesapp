@@ -3,21 +3,21 @@
 }
 .beach {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-    align-items: center;
-    padding: 0 4px;
+    padding: 0 5px;
 }
 .beach-open {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 4px;
+    background-color: #84bedf6c;
+    border-radius: 4px;
+    padding: 0 10px;
 }
 .beach:hover {
     cursor: pointer;
     background-color: #aec3d3;
+}
+.name-and-waveheight {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
 }
