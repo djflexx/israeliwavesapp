@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(129, 129, 129);
+    background-color: rgb(184, 184, 184);
 }
 @media screen and (max-width: 700px) {
     .footer-background p{

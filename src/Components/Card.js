@@ -30,16 +30,10 @@ export default function Card() {
                      <h1>{a.area}</h1>
                    </div>
                  </div>
-              {a.area === clickedItem && clicked ? (
-              <>
-              {a.beaches.map((beaches, index) => {            
-                  return (
-                    <div key={index}>
-                       <WeatherData name={beaches.name} lat={beaches.lat} lng={beaches.lng}/>
-                    </div>
-                  )
-              })}
-              </>
+              {a.area === clickedItem && clicked ? (       
+                <div key={index}>
+                  <WeatherData lat={a.lat} lng={a.lng}/>
+                </div>
               ): null
               }
             </div>

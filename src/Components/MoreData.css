@@ -4,12 +4,13 @@
     justify-content: center;
     align-items: center;
 }
-.header-and-data {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    height: 50px;
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+ul li {
+    line-height: 3;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid rgb(77, 122, 136);
     width: 100%;
-    border-top: 1px solid rgb(53, 108, 139);
 }

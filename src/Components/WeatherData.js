@@ -33,15 +33,11 @@ export default function WeatherData(props) {
         <div className="card-content">
          <div className="data-cont">
               <div className={!isClicked ? "beach" : "beach-open"} onClick={handleClick}>
-              <div className="name-and-waveheight">
-              <h2>{props.name}</h2>
+              </div>
               { waveHeight.length !== 0 ? (
-                 <>
-                    <p>{waveHeight.hours[hour].waveHeight.meteo}.mt</p>
-                 </> ) : <CircularProgress /> }
-              </div>
-               {isClicked && <MoreData data={waveHeight} hour={hour}/>}
-              </div>
+              <div>
+              <MoreData data={waveHeight} hour={hour} waveHeight={waveHeight.hours[hour].waveHeight.meteo}/>
+              </div> ) : <CircularProgress /> }
            </div>
         </div>
     )
